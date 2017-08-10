@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearLayout"
+    android:weightSum="1">
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:contentPadding="10dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Remaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/remaining"
+                    android:layout_toRightOf="@+id/equal"
+                    android:layout_below="@+id/calRemaining"
+                    android:textSize="12sp"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center" />
+
+                <TextView
+                    android:text="Goal"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/goal"
+                    android:layout_below="@+id/calGoal"
+                    android:layout_centerHorizontal="false"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_width="35sp" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_height="40dp"
+                    android:id="@+id/calRemaining"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/equal"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:text="Consumed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/consumed"
+                    android:textSize="12sp"
+                    android:layout_below="@+id/calConsumed"
+                    android:layout_alignStart="@+id/calConsumed" />
+
+                <TextView
+                    android:text="-"
+                    android:id="@+id/minus"
+                    android:textSize="30sp"
+                    android:gravity="top|center"
+                    android:layout_height="60dp"
+                    android:layout_width="60sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/calGoal"
+                    android:layout_marginStart="21dp" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_height="40sp"
+                    android:id="@+id/calConsumed"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_width="55sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="13dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/minus" />
+
+                <TextView
+                    android:text="="
+                    android:id="@+id/equal"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:layout_width="60sp"
+                    android:layout_marginLeft="17dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/calConsumed" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:id="@+id/calGoal"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/calGoal" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:contentPadding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bfastLayout"
+                    android:layout_below="@+id/textViewBfast"></LinearLayout>
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bfastCals"
+                    android:gravity="right|center"
+                    android:textSize="18sp"
+                    android:layout_gravity="right"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:id="@+id/textViewBfast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/breakfast"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+
+                <Button
+                    android:id="@+id/addBfast"
+                    android:layout_height="wrap_content"
+                    android:text="+ Add Food"
+                    android:textAllCaps="false"
+                    android:onClick="addFoodBfast"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/bfastLayout"
+                    android:layout_alignParentStart="true" />
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:contentPadding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lunchLayout"
+                    android:layout_below="@+id/textViewLunch"></LinearLayout>
+
+                <TextView
+                    android:text="Lunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewLunch"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"/>
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lunchCals"
+                    android:layout_gravity="right"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"/>
+
+                <Button
+                    android:text="+ Add Food"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addLunch"
+                    android:textAllCaps="false"
+                    android:layout_below="@+id/lunchLayout"
+                    android:onClick="addFoodLunch"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dinnerLayout"
+                android:layout_below="@+id/textViewDinner"></LinearLayout>
+
+            <TextView
+                android:text="Dinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDinner"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/dinnerCals"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:text="+ Add Food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addDinner"
+                android:layout_gravity="end"
+                android:textAllCaps="false"
+                android:onClick="addFoodDinner"
+                android:layout_below="@+id/dinnerLayout"
+                android:textSize="12sp" />
+        </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/snackLayout"
+                android:layout_below="@+id/textViewSnack"></LinearLayout>
+
+            <TextView
+                android:text="Snack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewSnack"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/snackCals"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:text="+ Add Food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addSnack"
+                android:layout_gravity="end"
+                android:textAllCaps="false"
+                android:layout_below="@+id/snackLayout"
+                android:onClick="addFoodSnacks"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
+</ScrollView>
+
